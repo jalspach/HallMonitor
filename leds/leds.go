@@ -1,7 +1,5 @@
 package leds
 
-import "encoding/hex"
-
 // returns status of the LED's in bianry
 // want to know whether an LED is on, off or flashing
 // (LSB) Red, Yellow Green
@@ -12,43 +10,42 @@ func checkstatus() hex {
 }
 func setstatus(i hex) int {
 	// Set the status of the leds
-switch i {
-case 0:
-	//all off
-case 1:
-	//Red solid
-case 2:
-	//Yellow solid
-case 3:
-	//Red and Yellow solid
-case 4:
-	//Green solid
-case 5:
-	//Red and Green solid
-case 6:
-	//Yellow and Green solid
-case 7:
-	//Red, Green and Yellow solid
-case 8:
-	//Not Valid (all off but still flashing)
-case 9:
-	//Red flashing
-case A:
-	//Yellow flashing
-case B:
-	//Red and Yellow flashing
-case C:
-	//Green flashing	
-case D:
-	//Red Green flashing
-case E:
-	//Yellow and Green flashing
-case F:
-	//Red, Yellow and Green flashing								
-default:
-	return 1	
-}	
-
+	switch i {
+	case 0:
+		//all off
+	case 1:
+		//Red solid
+	case 2:
+		//Yellow solid
+	case 3:
+		//Red and Yellow solid
+	case 4:
+		//Green solid
+	case 5:
+		//Red and Green solid
+	case 6:
+		//Yellow and Green solid
+	case 7:
+		//Red, Green and Yellow solid
+	case 8:
+		//Not Valid (all off but still flashing)
+	case 9:
+		//Red flashing
+	case A:
+		//Yellow flashing
+	case B:
+		//Red and Yellow flashing
+	case C:
+		//Green flashing
+	case D:
+		//Red Green flashing
+	case E:
+		//Yellow and Green flashing
+	case F:
+		//Red, Yellow and Green flashing
+	default:
+		return 1
+	}
 
 }
 func setthinking() int {
