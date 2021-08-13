@@ -2,53 +2,57 @@ package leds
 
 // returns status of the LED's in bianry
 // want to know whether an LED is on, off or flashing
-// (LSB) Red, Yellow Green
+// binary (LSB) Red, Yellow Green, Blink
 // 0 all off, 1 Red solid, 2 yellow solid, 3 red and yellow solid, 4 green solid, 5 red and green solid, 6 green and yellow solid, 7 red yellow and green solid
 // 8 NA (All off and flashing), 9 Red Flashing, A yellow flashing, B red and yellow flashing, C green flashing, D Green and Red flashing, E green and yellow flashing, green yellow and red flashing
-func checkstatus() hex {
+
+func checkstatus() int {
 	//returns the status of the LED's
+	return 0
 }
-func setstatus(i hex) int {
+// Set the status of the LED's based on the the Hex value. If an invalid number is passed will return 0X_BEEF if everything worked it will return 0x_FFFF
+func setstatus(hex int) int {
 	// Set the status of the leds
-	switch i {
-	case 0:
+	switch hex {
+	case 0x0:
 		//all off
-	case 1:
+	case 0x1:
 		//Red solid
-	case 2:
+	case 0x2:
 		//Yellow solid
-	case 3:
+	case 0x3:
 		//Red and Yellow solid
-	case 4:
+	case 0x4:
 		//Green solid
-	case 5:
+	case 0x5:
 		//Red and Green solid
-	case 6:
+	case 0x6:
 		//Yellow and Green solid
-	case 7:
+	case 0x7:
 		//Red, Green and Yellow solid
-	case 8:
+	case 0x8:
 		//Not Valid (all off but still flashing)
-	case 9:
+	case 0x9:
 		//Red flashing
-	case A:
+	case 0xA:
 		//Yellow flashing
-	case B:
+	case 0xB:
 		//Red and Yellow flashing
-	case C:
+	case 0xC:
 		//Green flashing
-	case D:
+	case 0xD:
 		//Red Green flashing
-	case E:
+	case 0xE:
 		//Yellow and Green flashing
-	case F:
+	case 0xF:
 		//Red, Yellow and Green flashing
 	default:
-		return 1
+		return 0xBEEF
 	}
-
+	return 0xFFFF
 }
 func setthinking() int {
 	//build these to call setstatus with a specific hex value instead of setting LED's manually
 	// set alert, set bootup, etc...
+	return 0
 }
